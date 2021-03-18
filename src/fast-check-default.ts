@@ -127,7 +127,7 @@ import {
 import { VerbosityLevel } from './check/runner/configuration/VerbosityLevel';
 import { ExecutionStatus } from './check/runner/reporter/ExecutionStatus';
 import { ExecutionTree } from './check/runner/reporter/ExecutionTree';
-import { cloneMethod } from './check/symbols';
+import { cloneIfNeeded, cloneMethod, hasCloneMethod, WithCloneMethod } from './check/symbols';
 import { Stream, stream } from './stream/Stream';
 import { hash } from './utils/hash';
 import { stringify } from './utils/stringify';
@@ -162,6 +162,9 @@ import {
 } from './check/arbitrary/TypedArrayArbitrary';
 import { sparseArray, SparseArrayConstraints } from './check/arbitrary/SparseArrayArbitrary';
 import { DoubleNextConstraints } from './check/arbitrary/DoubleNextArbitrary';
+import { NextArbitrary } from './check/arbitrary/definition/NextArbitrary';
+import { NextValue } from './check/arbitrary/definition/NextValue';
+import { convertFromNext, convertFromNextWithShrunkOnce, convertToNext } from './check/arbitrary/definition/Converters';
 
 // Explicit cast into string to avoid to have __type: "__PACKAGE_TYPE__"
 /**
@@ -330,10 +333,18 @@ export {
   SchedulerReportItem,
   // extend the framework
   Arbitrary,
+  NextArbitrary,
   ArbitraryWithShrink,
   ArbitraryWithContextualShrink,
   Shrinkable,
+  NextValue,
+  WithCloneMethod,
   cloneMethod,
+  hasCloneMethod,
+  cloneIfNeeded,
+  convertFromNext,
+  convertFromNextWithShrunkOnce,
+  convertToNext,
   // print values
   stringify,
   defaultReportMessage,
