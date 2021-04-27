@@ -1,4 +1,4 @@
-import { ipV4, ipV6, ipV4Extended } from '../../../../src/check/arbitrary/IpArbitrary';
+import { ipV4, ipV6, ipV4Extended } from '../../../../src/arbitrary/IpArbitrary';
 
 import * as genericHelper from './generic/GenericArbitraryHelper';
 

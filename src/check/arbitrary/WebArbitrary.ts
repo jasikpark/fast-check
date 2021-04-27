@@ -4,7 +4,7 @@ import { constant } from '../../arbitrary/constant';
 import { buildAlphaNumericPercentArb } from './helpers/SpecificCharacterRange';
 import { domain, hostUserInfo } from './HostArbitrary';
 import { nat } from '../../arbitrary/nat';
-import { ipV4, ipV4Extended, ipV6 } from './IpArbitrary';
+import { ipV4, ipV4Extended, ipV6 } from '../../arbitrary/IpArbitrary';
 import { oneof } from '../../arbitrary/oneof';
 import { option } from '../../arbitrary/option';
 import { stringOf } from './StringArbitrary';
